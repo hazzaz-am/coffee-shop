@@ -8,9 +8,8 @@ export const Banner = () => {
 				backgroundImage: `url(${bannerImg})`,
 			}}
 		>
-			<div className="px-6 xl:px-0 max-w-7xl mx-auto h-screen flex flex-col-reverse md:flex-row text-center md:text-left items-center justify-between">
-				<div className="w-1/2"></div>
-				<div className="text-white py-20 md:py-0 w-full md:w-1/2 mx-auto">
+			<div className="px-6 xl:px-0 max-w-7xl mx-auto h-screen relative">
+				<div className="text-white absolute top-1/2 sm:left-1/2 -translate-y-1/2">
 					<h3 className="font-rancho text-4xl md:text-5xl">
 						Would you like a Cup of Delicious Coffee?
 					</h3>
