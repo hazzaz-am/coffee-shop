@@ -1,5 +1,6 @@
 import { AboutUs } from "./AboutUs";
 import { Banner } from "./Banner";
+import { InstagramPhotos } from "./InstagramPhotos";
 import { Products } from "./Products";
 
 export const HomePage = () => {
@@ -8,6 +9,7 @@ export const HomePage = () => {
 			<Banner />
 			<AboutUs />
 			<Products />
+			<InstagramPhotos/>
 		</>
 	);
 };

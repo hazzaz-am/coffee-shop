@@ -7,9 +7,9 @@ import { Link } from "react-router";
 
 export const SingleCoffee = ({ coffee }) => {
 	return (
-		<div className="bg-[#F5F4F1] flex items-center justify-between gap-4 p-12 rounded-lg">
+		<div className="bg-[#F5F4F1] flex items-center justify-between gap-4 p-12 rounded-lg  z-10">
 			<div className="flex items-center">
-				<img className="w-40" src={coffeeIMG} alt="" />
+				<img className="w-24 sm:w-40" src={coffeeIMG} alt="" />
 
 				<div className="space-y-4">
 					<p className="capitalize text-xl text-[#5C5B5B]">
@@ -28,7 +28,7 @@ export const SingleCoffee = ({ coffee }) => {
 			</div>
 
 			{/* icons */}
-			<div className="flex flex-col gap-4 z-10">
+			<div className="flex flex-col gap-4">
 				<Link
 					to="/coffee-details"
 					className="rounded inline-block bg-[#D2B48C] p-2"

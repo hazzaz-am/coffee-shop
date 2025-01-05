@@ -52,12 +52,16 @@ const coffees = [
 export const Products = () => {
 	return (
 		<div className="relative mt-28">
-			<img className="absolute top-0 left-0" src={cupBG} alt="" />
-			<img className="absolute bottom-0 right-0" src={restaurantBG} alt="" />
-			<div className="px-6 xl:px-0 max-w-7xl mx-auto">
-				<div className="text-center">
+			<img className="absolute top-0 left-0 z-0" src={cupBG} alt="" />
+			<img
+				className="absolute bottom-0 right-0 z-0"
+				src={restaurantBG}
+				alt=""
+			/>
+			<div className="px-6 xl:px-0 max-w-7xl mx-auto z-10">
+				<div className="text-center z-10">
 					<h4 className="text-[#1B1A1A] text-xl mb-2">--- Sip & Savor ---</h4>
-					<h2 className="text-[#331A15] text-[55px] font-rancho [text-shadow:_0_4px_8px_rgb(51_26_21_/_0.8)]">
+					<h2 className="text-[#331A15] text-[55px] font-rancho [text-shadow:_0_4px_8px_rgb(51_26_21_/_0.8)] z-10">
 						Our Popular Products
 					</h2>
 					<Link
@@ -70,7 +74,7 @@ export const Products = () => {
 				</div>
 
 				{/* coffees */}
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-12">
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-12 z-10">
 					{coffees.map((coffee) => (
 						<SingleCoffee key={coffee._id} coffee={coffee} />
 					))}
