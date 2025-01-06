@@ -5,6 +5,7 @@ import { AddCoffee } from "./pages/coffee/AddCoffee";
 import { LoginPage } from "./pages/auth/LoginPage";
 import { RegisterPage } from "./pages/auth/RegisterPage";
 import { MyOrders } from "./pages/orders/MyOrders";
+import { Footer } from "./components/shared/Footer";
 
 export const App = () => {
 	return (
@@ -17,6 +18,7 @@ export const App = () => {
 				<Route path="/signin" element={<LoginPage />} />
 				<Route path="/signup" element={<RegisterPage />} />
 			</Routes>
+			<Footer />
 		</>
 	);
 };
