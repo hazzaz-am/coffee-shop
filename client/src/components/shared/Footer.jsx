@@ -8,10 +8,13 @@ import {
 	FaLocationDot,
 } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
+import footerBG from '../../assets/images/more/footer_bg.jpg'
 
 export const Footer = () => {
 	return (
-		<div className="bg-[#fafafa] py-10 mt-28">
+		<div style={{
+			backgroundImage: `url(${footerBG})`
+		}} className="py-10 mt-28">
 			<img
 				className="ml-6 w-10 sm:w-[75px] sm:h-[90px] cursor-pointer mb-6"
 				src={logo}
