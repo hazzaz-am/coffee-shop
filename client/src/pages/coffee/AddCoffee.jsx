@@ -4,7 +4,7 @@ import { ReuseableForm } from "../../components/shared/ReuseableForm";
 
 export const AddCoffee = () => {
 	return (
-		<div className=" px-6 xl:px-0 max-w-7xl mx-auto mt-10">
+		<div className="px-6 xl:px-0 max-w-7xl mx-auto mt-10">
 			<Link
 				to="/"
 				className="font-rancho inline-flex items-center gap-2 text-[#374151] text-3xl [text-shadow:_0_4px_8px_rgb(51_26_21_/_0.8)]"
