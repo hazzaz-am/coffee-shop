@@ -1,3 +1,5 @@
+
+
 export const ReuseableForm = () => {
 	return (
 		<form className="mx-auto mt-8">
@@ -116,7 +118,7 @@ export const ReuseableForm = () => {
 			{/* button */}
 			<input
 				type="submit"
-				value="Add Coffee"
+				value="Update Coffee Details"
 				className="font-rancho text-2xl border-2 border-[#331A15] bg-[#E3B577] text-[#331A15] px-4 py-2 drop-shadow-2xl mt-4 [text-shadow:_0_4px_8px_rgb(51_26_21_/_0.8)] w-full cursor-pointer"
 			/>
 		</form>
