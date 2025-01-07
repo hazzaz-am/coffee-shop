@@ -34,7 +34,7 @@ export const Navbar = () => {
 				<div className="flex items-center gap-4">
 					<Link
 						to="/signin"
-						className="text-white border px-4 py-2 text-xs sm:text-base"
+						className="font-rancho text-2xl border-2 border-[#331A15] bg-[#E3B577] text-[#331A15] px-4 py-2 drop-shadow-2xl mt-4 [text-shadow:_0_4px_8px_rgb(51_26_21_/_0.8)] cursor-pointer"
 					>
 						Signin
 					</Link>
