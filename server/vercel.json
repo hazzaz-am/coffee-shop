@@ -8,7 +8,11 @@
 	],
 	"routes": [
 		{
-			"src": "/api/(.*)",
+			"src": "/coffees/(.*)",
+			"dest": "index.js"
+		},
+		{
+			"src": "/coffees",
 			"dest": "index.js"
 		},
 		{

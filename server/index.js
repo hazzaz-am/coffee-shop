@@ -6,7 +6,7 @@ import { MongoClient, ObjectId, ServerApiVersion } from "mongodb";
 
 // env connect
 dotenv.config();
-const port = process.env.PORT || 5000;
+const port = 5000;
 const username = process.env.MONGO_USER;
 const password = process.env.MONGO_PASSWORD;
 
