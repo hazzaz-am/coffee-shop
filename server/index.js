@@ -6,7 +6,7 @@ import { MongoClient, ObjectId, ServerApiVersion } from "mongodb";
 
 // env connect
 dotenv.config();
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 const username = process.env.MONGO_USER;
 const password = process.env.MONGO_PASSWORD;
 
@@ -129,6 +129,6 @@ async function run() {
 run().catch(console.dir);
 
 // listening port
-app.listen(PORT, () => {
-	console.log(`app is listening on PORT: ${PORT}`);
+app.listen(port, () => {
+	console.log(`app is listening on PORT: ${port}`);
 });
