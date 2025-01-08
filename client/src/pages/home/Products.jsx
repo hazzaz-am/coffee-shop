@@ -3,53 +3,62 @@ import restaurantBG from "../../assets/images/more/restaurantBG.png";
 import { Link } from "react-router";
 import { CiCoffeeCup } from "react-icons/ci";
 import { SingleCoffee } from "./SingleCoffee";
+import { useEffect, useState } from "react";
 
-const coffees = [
-	{
-		_id: "65cf0145623dd80bc69885ea",
-		coffee_name: "Americano Coffee",
-		chef_name: "Mr. Matin Paul",
-		price: 890,
-		added_by: "hazzazabdul111@gmail.com",
-	},
-	{
-		_id: "65cf0145623dd80bc69885eb",
-		coffee_name: "Cappuccino",
-		chef_name: "Ms. Sarah Johnson",
-		price: 750,
-		added_by: "hazzazabdul111@gmail.com",
-	},
-	{
-		_id: "65cf0145623dd80bc69885ec",
-		coffee_name: "Espresso Shot",
-		chef_name: "Mr. David Chen",
-		price: 550,
-		added_by: "hazzazabdul111@gmail.com",
-	},
-	{
-		_id: "65cf0145623dd80bc69885ed",
-		coffee_name: "Caramel Latte",
-		chef_name: "Mrs. Emma Wilson",
-		price: 920,
-		added_by: "hazzazabdul111@gmail.com",
-	},
-	{
-		_id: "65cf0145623dd80bc69885ee",
-		coffee_name: "Mocha Frappe",
-		chef_name: "Mr. James Rodriguez",
-		price: 980,
-		added_by: "hazzazabdul111@gmail.com",
-	},
-	{
-		_id: "65cf0145623dd80bc69885ef",
-		coffee_name: "Turkish Coffee",
-		chef_name: "Ms. Sophia Lee",
-		price: 850,
-		added_by: "hazzazabdul111@gmail.com",
-	},
-];
+// const coffees = [
+// 	{
+// 		_id: "65cf0145623dd80bc69885ea",
+// 		coffee_name: "Americano Coffee",
+// 		chef_name: "Mr. Matin Paul",
+// 		price: 890,
+// 		added_by: "hazzazabdul111@gmail.com",
+// 	},
+// 	{
+// 		_id: "65cf0145623dd80bc69885eb",
+// 		coffee_name: "Cappuccino",
+// 		chef_name: "Ms. Sarah Johnson",
+// 		price: 750,
+// 		added_by: "hazzazabdul111@gmail.com",
+// 	},
+// 	{
+// 		_id: "65cf0145623dd80bc69885ec",
+// 		coffee_name: "Espresso Shot",
+// 		chef_name: "Mr. David Chen",
+// 		price: 550,
+// 		added_by: "hazzazabdul111@gmail.com",
+// 	},
+// 	{
+// 		_id: "65cf0145623dd80bc69885ed",
+// 		coffee_name: "Caramel Latte",
+// 		chef_name: "Mrs. Emma Wilson",
+// 		price: 920,
+// 		added_by: "hazzazabdul111@gmail.com",
+// 	},
+// 	{
+// 		_id: "65cf0145623dd80bc69885ee",
+// 		coffee_name: "Mocha Frappe",
+// 		chef_name: "Mr. James Rodriguez",
+// 		price: 980,
+// 		added_by: "hazzazabdul111@gmail.com",
+// 	},
+// 	{
+// 		_id: "65cf0145623dd80bc69885ef",
+// 		coffee_name: "Turkish Coffee",
+// 		chef_name: "Ms. Sophia Lee",
+// 		price: 850,
+// 		added_by: "hazzazabdul111@gmail.com",
+// 	},
+// ];
 
 export const Products = () => {
+	const [coffees, setCoffees] = useState([])
+
+	useEffect(() => {
+		fetch("http://localhost:5000/coffees")
+			.then(res => res.json())
+			.then(data => setCoffees(data))
+			.catch((error) => console.log(error.message))
+	}, [])
 	return (
 		<div className="relative mt-28">
 			<img className="absolute top-0 left-0 z-0" src={cupBG} alt="" />
