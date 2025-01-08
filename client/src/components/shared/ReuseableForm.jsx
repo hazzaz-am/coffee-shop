@@ -27,7 +27,7 @@ export const ReuseableForm = () => {
 			added_by: "hazzazabdul111@gmail.com",
 		};
 
-		fetch("http://localhost:5000/coffees", {
+		fetch("https://coffee-shop-server-two-steel.vercel.app/coffees", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
@@ -38,7 +38,7 @@ export const ReuseableForm = () => {
 			.then((data) => {
 				if (data.insertedId) {
 					toast.success("Successfully Coffee added!");
-					form.reset()
+					form.reset();
 				}
 			})
 			.catch((error) => console.log(error.message));

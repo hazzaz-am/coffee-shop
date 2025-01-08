@@ -10,14 +10,14 @@ export const Products = () => {
 	const [coffees, setCoffees] = useState([]);
 
 	useEffect(() => {
-		fetch("http://localhost:5000/coffees")
+		fetch("https://coffee-shop-server-two-steel.vercel.app/coffees")
 			.then((res) => res.json())
 			.then((data) => setCoffees(data))
 			.catch((error) => console.log(error.message));
 	}, []);
 
 	const handleCoffeeDelete = (id) => {
-		fetch(`http://localhost:5000/coffees/${id}`, {
+		fetch(`https://coffee-shop-server-two-steel.vercel.app/coffees/${id}`, {
 			method: "DELETE",
 		})
 			.then((res) => res.json())

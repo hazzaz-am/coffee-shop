@@ -32,7 +32,7 @@ export const UpdateForm = () => {
 			added_by: "hazzazabdul111@gmail.com",
 		};
 
-		fetch(`http://localhost:5000/coffees/${id}`, {
+		fetch(`https://coffee-shop-server-two-steel.vercel.app/coffees/${id}`, {
 			method: "PUT",
 			headers: {
 				"content-type": "application/json",
@@ -50,7 +50,7 @@ export const UpdateForm = () => {
 	};
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/coffees/${id}`)
+		fetch(`https://coffee-shop-server-two-steel.vercel.app/coffees/${id}`)
 			.then((res) => res.json())
 			.then((data) => setCoffee(data))
 			.catch((err) => console.log(err.message));
