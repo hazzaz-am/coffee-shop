@@ -70,15 +70,51 @@ async function run() {
 			res.status(201).send(result);
 		});
 
-    // delete coffee 
-    app.delete("/coffees/:id", async (req, res) => {
-      const id = req.params.id
+		// delete coffee
+		app.delete("/coffees/:id", async (req, res) => {
+			const id = req.params.id;
 
+			const query = { _id: new ObjectId(id) };
+			const result = coffeeCollection.deleteOne(query);
+
+			res.status(200).send(result);
+		});
+
+    // get single coffee
+    app.get('/coffees/:id', async(req, res) => {
+      const id = req.params.id
       const query = {_id: new ObjectId(id)}
-      const result = coffeeCollection.deleteOne(query)
+      const result = await coffeeCollection.findOne(query)
 
       res.status(200).send(result)
-    });
+    })
+
+		// update coffee
+		app.put("/coffees/:id", async (req, res) => {
+			const id = req.params.id;
+			const newCoffee = req.body;
+
+			const filter = { _id: new ObjectId(id) };
+
+			// Specify the update to set a value for the plot field
+			const coffee = {
+				$set: {
+					company_name: newCoffee.company_name,
+					coffee_name: newCoffee.coffee_name,
+					chef_name: newCoffee.chef_name,
+					supplier_name: newCoffee.supplier_name,
+					taste: newCoffee.taste,
+					category: newCoffee.category,
+					details: newCoffee.details,
+					price: newCoffee.price,
+					added_by: "hazzazabdul111@gmail.com",
+				},
+			};
+
+			const result = await coffeeCollection.updateOne(filter, coffee);
+  
+			res.status(201).send(result);
+		});
 
 		// Send a ping to confirm a successful connection
 		await client.db("admin").command({ ping: 1 });

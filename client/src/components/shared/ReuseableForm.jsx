@@ -8,7 +8,7 @@ export const ReuseableForm = () => {
 
 		const company_name = formData.get("coffee_name");
 		const coffee_name = formData.get("coffee_name");
-		const price = formData.get("coffee_name");
+		const price = formData.get("price");
 		const chef_name = formData.get("chef_name");
 		const supplier_name = formData.get("supplier_name");
 		const taste = formData.get("taste");

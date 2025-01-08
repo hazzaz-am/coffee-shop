@@ -36,7 +36,7 @@ export const SingleCoffee = ({ coffee, onDelete }) => {
 					<FaEye size={"20px"} color="white" />
 				</Link>
 				<Link
-					to="/coffee-edit"
+					to={`/coffee-edit/${coffee._id}`}
 					className="rounded inline-block bg-[#3C393B] p-2"
 				>
 					<HiPencil size={"20px"} color="white" />
