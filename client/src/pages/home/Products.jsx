@@ -4,17 +4,31 @@ import { Link } from "react-router";
 import { CiCoffeeCup } from "react-icons/ci";
 import { SingleCoffee } from "./SingleCoffee";
 import { useEffect, useState } from "react";
-
+import toast from "react-hot-toast";
 
 export const Products = () => {
-	const [coffees, setCoffees] = useState([])
+	const [coffees, setCoffees] = useState([]);
 
 	useEffect(() => {
 		fetch("http://localhost:5000/coffees")
-			.then(res => res.json())
-			.then(data => setCoffees(data))
-			.catch((error) => console.log(error.message))
-	}, [])
+			.then((res) => res.json())
+			.then((data) => setCoffees(data))
+			.catch((error) => console.log(error.message));
+	}, []);
+
+	const handleCoffeeDelete = (id) => {
+		fetch(`http://localhost:5000/coffees/${id}`, {
+			method: "DELETE",
+		})
+			.then((res) => res.json())
+			.then(() => {
+				const newCoffees = coffees.filter((coffee) => coffee._id !== id);
+				setCoffees(newCoffees);
+				toast.success("Deleted Successfully");
+			})
+			.catch((err) => console.log(err.message));
+	};
+
 	return (
 		<div className="relative mt-28">
 			<img className="absolute top-0 left-0 z-0" src={cupBG} alt="" />
@@ -41,7 +55,11 @@ export const Products = () => {
 				{/* coffees */}
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-12 z-10">
 					{coffees.slice(0, 6).map((coffee) => (
-						<SingleCoffee key={coffee._id} coffee={coffee} />
+						<SingleCoffee
+							key={coffee._id}
+							coffee={coffee}
+							onDelete={handleCoffeeDelete}
+						/>
 					))}
 				</div>
 			</div>

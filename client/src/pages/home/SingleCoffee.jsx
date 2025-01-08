@@ -5,7 +5,7 @@ import { HiPencil } from "react-icons/hi";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router";
 
-export const SingleCoffee = ({ coffee }) => {
+export const SingleCoffee = ({ coffee, onDelete }) => {
 	return (
 		<div className="bg-[#F5F4F1] flex items-center justify-between gap-4 p-12 rounded-lg  z-10">
 			<div className="flex items-center">
@@ -41,7 +41,10 @@ export const SingleCoffee = ({ coffee }) => {
 				>
 					<HiPencil size={"20px"} color="white" />
 				</Link>
-				<Link className="rounded inline-block bg-[#EA4744] p-2">
+				<Link
+					onClick={() => onDelete(coffee._id)}
+					className="rounded inline-block bg-[#EA4744] p-2"
+				>
 					<MdDelete size={"20px"} color="white" />
 				</Link>
 			</div>

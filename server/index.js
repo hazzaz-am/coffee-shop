@@ -70,6 +70,16 @@ async function run() {
 			res.status(201).send(result);
 		});
 
+    // delete coffee 
+    app.delete("/coffees/:id", async (req, res) => {
+      const id = req.params.id
+
+      const query = {_id: new ObjectId(id)}
+      const result = coffeeCollection.deleteOne(query)
+
+      res.status(200).send(result)
+    });
+
 		// Send a ping to confirm a successful connection
 		await client.db("admin").command({ ping: 1 });
 		console.log(
