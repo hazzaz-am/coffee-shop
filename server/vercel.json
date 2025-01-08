@@ -1,4 +1,3 @@
-
 {
 	"version": 2,
 	"builds": [
@@ -8,6 +7,14 @@
 		}
 	],
 	"routes": [
+		{
+			"src": "/coffees/(.*)",
+			"dest": "index.js"
+		},
+		{
+			"src": "/coffees",
+			"dest": "index.js"
+		},
 		{
 			"src": "/(.*)",
 			"dest": "index.js"
