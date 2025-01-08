@@ -8,6 +8,8 @@ import { MyOrders } from "./pages/orders/MyOrders";
 import { Footer } from "./components/shared/Footer";
 import { CoffeeDetails } from "./pages/coffee/CoffeeDetails";
 import { UpdateCoffee } from "./pages/coffee/UpdateCoffee";
+import { Toaster } from "react-hot-toast";
+
 
 export const App = () => {
 	return (
@@ -23,6 +25,7 @@ export const App = () => {
 				<Route path="/signup" element={<RegisterPage />} />
 			</Routes>
 			<Footer />
+			<Toaster/>
 		</>
 	);
 };

@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { FaArrowLeft } from "react-icons/fa6";
-import { ReuseableForm } from "../../components/shared/ReuseableForm";
+import { UpdateForm } from "../../components/shared/UpdateForm";
 
 export const UpdateCoffee = () => {
 	return (
@@ -22,7 +22,7 @@ export const UpdateCoffee = () => {
 					using Lorem Ipsum is that it has a more-or-less normal distribution of
 					letters, as opposed to using Content here.
 				</p>
-				<ReuseableForm />
+				<UpdateForm />
 			</div>
 		</div>
 	);

@@ -59,6 +59,17 @@ async function run() {
 			const result = await coffeeCollection.findOne(query);
 			res.status(200).send(result);
 		});
+
+		// insert coffee details
+		app.post("/coffees", async (req, res) => {
+			const coffee = req.body;
+
+			// Insert the defined document into the "haiku" collection
+			const result = await coffeeCollection.insertOne(coffee);
+
+			res.status(201).send(result);
+		});
+
 		// Send a ping to confirm a successful connection
 		await client.db("admin").command({ ping: 1 });
 		console.log(

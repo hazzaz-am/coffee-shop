@@ -22,7 +22,7 @@ export const SingleCoffee = ({ coffee }) => {
 					</p>
 					<p className="capitalize text-xl text-[#5C5B5B]">
 						<span className="font-semibold text-[#1B1A1A]">Price:</span>{" "}
-						{coffee.price} Taka
+						{coffee.price} $
 					</p>
 				</div>
 			</div>
