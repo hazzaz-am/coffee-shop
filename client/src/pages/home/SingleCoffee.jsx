@@ -30,7 +30,7 @@ export const SingleCoffee = ({ coffee }) => {
 			{/* icons */}
 			<div className="flex flex-col gap-4">
 				<Link
-					to="/coffee-details"
+					to={`/coffee-details/${coffee._id}`}
 					className="rounded inline-block bg-[#D2B48C] p-2"
 				>
 					<FaEye size={"20px"} color="white" />

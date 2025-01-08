@@ -16,7 +16,7 @@ export const App = () => {
 			<Routes>
 				<Route path="/" element={<HomePage />} />
 				<Route path="/add-coffee" element={<AddCoffee />} />
-				<Route path="/coffee-details" element={<CoffeeDetails />} />
+				<Route path="/coffee-details/:id" element={<CoffeeDetails />} />
 				<Route path="/coffee-edit" element={<UpdateCoffee />} />
 				<Route path="/my-orders" element={<MyOrders />} />
 				<Route path="/signin" element={<LoginPage />} />

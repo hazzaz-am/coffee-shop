@@ -5,50 +5,6 @@ import { CiCoffeeCup } from "react-icons/ci";
 import { SingleCoffee } from "./SingleCoffee";
 import { useEffect, useState } from "react";
 
-// const coffees = [
-// 	{
-// 		_id: "65cf0145623dd80bc69885ea",
-// 		coffee_name: "Americano Coffee",
-// 		chef_name: "Mr. Matin Paul",
-// 		price: 890,
-// 		added_by: "hazzazabdul111@gmail.com",
-// 	},
-// 	{
-// 		_id: "65cf0145623dd80bc69885eb",
-// 		coffee_name: "Cappuccino",
-// 		chef_name: "Ms. Sarah Johnson",
-// 		price: 750,
-// 		added_by: "hazzazabdul111@gmail.com",
-// 	},
-// 	{
-// 		_id: "65cf0145623dd80bc69885ec",
-// 		coffee_name: "Espresso Shot",
-// 		chef_name: "Mr. David Chen",
-// 		price: 550,
-// 		added_by: "hazzazabdul111@gmail.com",
-// 	},
-// 	{
-// 		_id: "65cf0145623dd80bc69885ed",
-// 		coffee_name: "Caramel Latte",
-// 		chef_name: "Mrs. Emma Wilson",
-// 		price: 920,
-// 		added_by: "hazzazabdul111@gmail.com",
-// 	},
-// 	{
-// 		_id: "65cf0145623dd80bc69885ee",
-// 		coffee_name: "Mocha Frappe",
-// 		chef_name: "Mr. James Rodriguez",
-// 		price: 980,
-// 		added_by: "hazzazabdul111@gmail.com",
-// 	},
-// 	{
-// 		_id: "65cf0145623dd80bc69885ef",
-// 		coffee_name: "Turkish Coffee",
-// 		chef_name: "Ms. Sophia Lee",
-// 		price: 850,
-// 		added_by: "hazzazabdul111@gmail.com",
-// 	},
-// ];
 
 export const Products = () => {
 	const [coffees, setCoffees] = useState([])
@@ -84,7 +40,7 @@ export const Products = () => {
 
 				{/* coffees */}
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-12 z-10">
-					{coffees.map((coffee) => (
+					{coffees.slice(0, 6).map((coffee) => (
 						<SingleCoffee key={coffee._id} coffee={coffee} />
 					))}
 				</div>

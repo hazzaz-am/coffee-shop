@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import dotenv from "dotenv";
-import { MongoClient, ServerApiVersion } from "mongodb";
+import { MongoClient, ObjectId, ServerApiVersion } from "mongodb";
 
 // env connect
 dotenv.config();
@@ -24,8 +24,7 @@ app.get("/", (req, res) => {
 });
 
 // database configuration
-const uri =
-	`mongodb+srv://${username}:${password}@cluster0.yc5i8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;;
+const uri = `mongodb+srv://${username}:${password}@cluster0.yc5i8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -48,12 +47,18 @@ async function run() {
 		// get all coffees
 		app.get("/coffees", async (_req, res) => {
 			const result = await coffeeCollection.find().toArray();
-      console.log(result);
+			console.log(result);
 			res.status(200).send(result);
 		});
 
-    // get single coffee details
-    
+		// get single coffee details
+		app.get("/coffees/:id", async (req, res) => {
+			const id = req.params.id;
+			const query = { _id: new ObjectId(id) };
+
+			const result = await coffeeCollection.findOne(query);
+			res.status(200).send(result);
+		});
 		// Send a ping to confirm a successful connection
 		await client.db("admin").command({ ping: 1 });
 		console.log(
