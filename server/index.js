@@ -14,7 +14,13 @@ const password = process.env.MONGO_PASSWORD;
 const app = express();
 
 // middlewares
-app.use([cors(), morgan("dev"), express.json()]);
+app.use([morgan("dev"), express.json()]);
+app.use(
+	cors({
+		origin: ["http://localhost:5173", "https://coffee-shop-client.vercel.app"],
+		credentials: true,
+	})
+);
 
 // app health check
 app.get("/", (req, res) => {
@@ -80,14 +86,14 @@ async function run() {
 			res.status(200).send(result);
 		});
 
-    // get single coffee
-    app.get('/coffees/:id', async(req, res) => {
-      const id = req.params.id
-      const query = {_id: new ObjectId(id)}
-      const result = await coffeeCollection.findOne(query)
+		// get single coffee
+		app.get("/coffees/:id", async (req, res) => {
+			const id = req.params.id;
+			const query = { _id: new ObjectId(id) };
+			const result = await coffeeCollection.findOne(query);
 
-      res.status(200).send(result)
-    })
+			res.status(200).send(result);
+		});
 
 		// update coffee
 		app.put("/coffees/:id", async (req, res) => {
@@ -112,7 +118,7 @@ async function run() {
 			};
 
 			const result = await coffeeCollection.updateOne(filter, coffee);
-  
+
 			res.status(201).send(result);
 		});
 
