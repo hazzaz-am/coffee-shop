@@ -8,7 +8,7 @@ export const CoffeeDetails = () => {
 	const { id } = useParams();
 
 	useEffect(() => {
-		fetch(`https://coffee-shop-server-two-steel.vercel.app/coffees/${id}`)
+		fetch(`https://coffee-server-umber.vercel.app/coffees/${id}`)
 			.then((res) => res.json())
 			.then((data) => setCoffee(data))
 			.catch((error) => console.log(error.message));

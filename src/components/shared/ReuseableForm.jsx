@@ -27,7 +27,7 @@ export const ReuseableForm = () => {
 			added_by: "hazzazabdul111@gmail.com",
 		};
 
-		fetch("https://coffee-shop-server-two-steel.vercel.app/coffees", {
+		fetch("https://coffee-server-umber.vercel.app/coffees", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
